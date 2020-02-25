@@ -4,34 +4,41 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:Treti"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="51*" />
-			<RowDefinition Height="50*" />
-			<RowDefinition Height="318*" />
+			<RowDefinition Height="61*" />
+			<RowDefinition Height="50" />
+			<RowDefinition Height="308*" />
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="59*" />
-			<ColumnDefinition Width="205*" />
+			<ColumnDefinition Width="5*" />
+			<ColumnDefinition Width="17*" />
 		</Grid.ColumnDefinitions>
-		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Left" Margin="30,15,0,0" VerticalAlignment="Top" Width="120" Height="26" />
-		<TextBox x:Name="TxtCount" Text="30"
-		         HorizontalAlignment="Left" Height="26" Margin="24,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="120" Grid.Row="2" />
+		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="120" />
+		<TextBox x:Name="TxtCount" Text="300"
+		         HorizontalAlignment="Center" Height="26" Margin="0,35,0,0" VerticalAlignment="Top"
+		         Width="120" Grid.Row="2" Grid.Column="0" />
 
-		<Button HorizontalAlignment="Left" Margin="30,31,0,0" Content="Zjistit číslo" VerticalAlignment="Top"
-		        Click="GetVal_OnClick" Grid.Row="2" Height="27" Width="77" />
-		<TextBox x:Name="TxtMin" Text="0"
-		         HorizontalAlignment="Left" Height="26" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="64" Grid.Row="1" />
+		<Button HorizontalAlignment="Center" Margin="0,66,0,0" Content="Načíst data" VerticalAlignment="Top"
+		        Click="GetVal_OnClick" Grid.Row="2" Grid.Column="0" Width="76" />
+		<TextBox x:Name="TxtMin" Text="-300"
+		         HorizontalAlignment="Left" Height="26" Margin="3,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+		         Width="64" Grid.Row="1" Grid.Column="0" />
 		<TextBox x:Name="TxtMax" Text="300"
-		         HorizontalAlignment="Right" Height="26" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="64" Grid.Row="1" />
+		         HorizontalAlignment="Right" Height="26" Margin="0,24,3,0" TextWrapping="Wrap" VerticalAlignment="Top"
+		         Width="64" Grid.Row="1" Grid.Column="0" />
 
-		<lvc:CartesianChart x:Name="MainChart" Grid.Column="1" Grid.RowSpan="3" />
+		<lvc:CartesianChart x:Name="MainChart" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" />
+		<TextBlock HorizontalAlignment="Left" Margin="30,14,0,0" Grid.Row="2" Grid.Column="0" Text="Počet bodů:"
+		           VerticalAlignment="Top" />
+		<TextBlock HorizontalAlignment="Left" Margin="3,3,0,0" Grid.Row="1" Grid.Column="0" Text="Minimum:"
+		           VerticalAlignment="Top" />
+		<TextBlock HorizontalAlignment="Left" Margin="113,3,0,0" Grid.Row="1" Grid.Column="0" Text="Maximum:"
+		           VerticalAlignment="Top" />
+		<TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="30,4,110,0" Text="Funkce:"
+		           VerticalAlignment="Top" />
 	</Grid>
 </Window>

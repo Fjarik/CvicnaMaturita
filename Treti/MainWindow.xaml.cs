@@ -35,17 +35,16 @@ namespace Treti
 
 			var list = funcs.Select(x => new ComboBoxItem {
 				Content = x.ToString(),
-				Tag = x,
-				IsSelected = x == FuncName.funcF
+				Tag = x
 			});
 
 			CmBoxFuncNames.ItemsSource = list;
-			CmBoxFuncNames.SelectedIndex = 1;
+			CmBoxFuncNames.SelectedIndex = 0;
 		}
 
 		private async void GetVal_OnClick(object sender, RoutedEventArgs e)
 		{
-			//MainChart.Series.Clear();
+			MainChart.Series.Clear();
 			if (!int.TryParse(TxtCount.Text, out int count)) {
 				return;
 			}

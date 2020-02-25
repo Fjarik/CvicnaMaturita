@@ -5,15 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Druhe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="300">
 	<Grid>
-		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Left" Margin="30,30,0,0" VerticalAlignment="Top" Width="120" />
+
+		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Stretch" Margin="10,30,10,0" VerticalAlignment="Top" />
 		<TextBox x:Name="TxtXvalue"
-		         HorizontalAlignment="Left" Height="23" Margin="30,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="120" ToolTip="Zadejte hodnut X" />
+		         HorizontalAlignment="Stretch" Margin="10,81,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
+		         ToolTip="Zadejte hodnut X" />
 		<TextBox x:Name="TxtYvalue"
-		         HorizontalAlignment="Left" Height="23" Margin="30,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="120" IsReadOnly="True" />
-		<Button HorizontalAlignment="Left" Margin="30,120,0,0" Content="Zjistit číslo" VerticalAlignment="Top" Click="GetVal_OnClick" />
+		         HorizontalAlignment="Stretch" Margin="10,120,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
+		         IsReadOnly="True" />
+		<Button HorizontalAlignment="Center" Margin="0,150,0,0" Content="Zjistit číslo" VerticalAlignment="Top"
+		        Click="GetVal_OnClick" />
+		<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Funkce:" VerticalAlignment="Top" />
+		<TextBlock HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="X:" VerticalAlignment="Top" />
+		<TextBlock HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="Y:" VerticalAlignment="Top" />
 	</Grid>
 </Window>

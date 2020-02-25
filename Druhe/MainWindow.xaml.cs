@@ -36,6 +36,7 @@ namespace Druhe
 			});
 
 			CmBoxFuncNames.ItemsSource = list;
+			CmBoxFuncNames.SelectedIndex = 0;
 		}
 
 		private async void GetVal_OnClick(object sender, RoutedEventArgs e)
