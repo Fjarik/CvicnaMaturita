@@ -45,6 +45,7 @@ namespace Treti
 		private async void GetVal_OnClick(object sender, RoutedEventArgs e)
 		{
 			MainChart.Series.Clear();
+
 			if (!int.TryParse(TxtCount.Text, out int count)) {
 				return;
 			}
@@ -57,10 +58,11 @@ namespace Treti
 			if (max < min) {
 				return;
 			}
-			var item = CmBoxFuncNames.SelectedItem as ComboBoxItem;
-			var func = item?.Tag as FuncName?;
 
-			if (func == null) {
+			if (!(CmBoxFuncNames.SelectionBoxItem is ComboBoxItem item)) {
+				return;
+			}
+			if (!(item.Tag is FuncName func)) {
 				return;
 			}
 
@@ -69,21 +71,21 @@ namespace Treti
 
 			var models = new List<Model>();
 			for (int i = 0; i < count; i++) {
+				// for(double x = min; x <= max; x+=step)
 				var x = min + (i * step);
-				var mod = await connector.GetModel((FuncName) func, x);
-				await Task.Delay(15);
+				var mod = await connector.GetModel(func, x);
 				models.Add(mod);
+				await Task.Delay(15);
 			}
 
-			var values = models.Select(x => new ObservablePoint(x.xVal, x.yVal));
+			var points = models.Select(m => new ObservablePoint(m.xVal, m.yVal));
 
-			ChartValues<ObservablePoint> val = new ChartValues<ObservablePoint>(values);
+			var values = new ChartValues<ObservablePoint>(points);
 
 			var serie = new ScatterSeries() {
-				Values = val,
+				Values = values,
 				Name = "Hodnoty"
 			};
-
 
 			MainChart.Series.Add(serie);
 		}

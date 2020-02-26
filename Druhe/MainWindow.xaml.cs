@@ -44,15 +44,14 @@ namespace Druhe
 			if (!double.TryParse(TxtXvalue.Text, out double xVal)) {
 				return;
 			}
-			var item = CmBoxFuncNames.SelectedItem as ComboBoxItem;
-			var func = item?.Tag as FuncName?;
-
-			if (func == null) {
+			if (!(CmBoxFuncNames.SelectionBoxItem is ComboBoxItem item)) {
+				return;
+			}
+			if (!(item.Tag is FuncName func)) {
 				return;
 			}
 
-			var res = await connector.GetModel((FuncName) func, xVal);
-
+			var res = await connector.GetModel(func, xVal);
 
 			TxtYvalue.Text = res.yVal.ToString();
 		}
