@@ -71,7 +71,7 @@ namespace Treti
 			for (int i = 0; i < count; i++) {
 				var x = min + (i * step);
 				var mod = await connector.GetModel((FuncName) func, x);
-				await Task.Delay(10);
+				await Task.Delay(15);
 				models.Add(mod);
 			}
 

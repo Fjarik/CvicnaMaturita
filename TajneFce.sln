@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataConnector", "DataConnec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treti", "Treti\Treti.csproj", "{B64D2E64-89E3-471B-A30D-54E596682ED7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ctvrte", "Ctvrte\Ctvrte.csproj", "{A73A22E0-826F-4F39-8EFC-319DB2A30D96}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ctvrte", "Ctvrte\Ctvrte.csproj", "{2B2E0D8A-3292-4778-BB06-BFE7E8D85DD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{B64D2E64-89E3-471B-A30D-54E596682ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B64D2E64-89E3-471B-A30D-54E596682ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B64D2E64-89E3-471B-A30D-54E596682ED7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A73A22E0-826F-4F39-8EFC-319DB2A30D96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A73A22E0-826F-4F39-8EFC-319DB2A30D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A73A22E0-826F-4F39-8EFC-319DB2A30D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A73A22E0-826F-4F39-8EFC-319DB2A30D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B2E0D8A-3292-4778-BB06-BFE7E8D85DD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B2E0D8A-3292-4778-BB06-BFE7E8D85DD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B2E0D8A-3292-4778-BB06-BFE7E8D85DD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B2E0D8A-3292-4778-BB06-BFE7E8D85DD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
