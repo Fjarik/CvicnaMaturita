@@ -7,7 +7,6 @@ Váš program se bude připojovat k webové službě, získávat z ní data, zob
     - proměnná funcName může mít dvě řetězcové hodnoty - "funcF" a "funcG"
     - proměnná xVal je reálné číslo
     - pokud je požadavek v pořádku, je vrácen stavový kód 200 a JSON ve tvaru 
-
     - kde yVal vrací hodnotu dotazované funkce funcName v bodě x = xVal. Vyzkoušejte např. http://maturita.delta-studenti.cz/prakticka/cvicna-tajne-funkce/tajne-funkce.php?funcName=funcG&xVal=-4 .
     - V případě neplatného požadavku je vrácen stavový kód 400 a odpovídající JSON.
   2. Vytvořte textové rozhraní pro tuto službu, tzn. výběrový prvek, ve kterém bude zvolena funkce F nebo G a číselný vstup, do kterého uživatel vepíše číslo x. Po stisku tlačítka "Zjisti hodnotu" vypíše hodnotu dotazované funkce v daném bodě x.
