@@ -17,7 +17,7 @@ Váš program se bude připojovat k webové službě, získávat z ní data, zob
 4. Vytvořte analyzátor funkcí na intervalu <-4; 8>
     1. V určitém úseku má funkce G nižší hodnotu , než funkce F. Analyzátor najde hranice této oblasti.
     2. Analyzátor zjistí, kde má funkce G mezi krajními body intervalu kořen, tzn. její hodnota prochází nulou (s přesností 0.001)
-    3. Považujte za dané, že mezi hodnotami -4 a 8 určitě alespoň jednou nulou prochází 
+Považujte za dané, že mezi hodnotami -4 a 8 určitě alespoň jednou nulou prochází
 (návod: zvolíme si interval = dva hraniční body a zkoušíme to tak dlouho, než je jeden nad nulou a druhý pod nulou. Pak zkusíme interval rozpůlit a podle hodnoty funkce v polovině vzdálenosti nahradíme buď jeden nebo druhý krajní bod intervalu tak, abychom měli pořád jeden bod nad nulou a druhý pod nulou. Pak znovu půlíme...)
     4. Analyzátor najde všechny kořeny na daném intervalu.
     5. Analyzátor najde pro funkci G na intervalu lokální maxima a minima (místa, od nichž na obě strany funkce klesá resp. roste). Návod: Zvol dva body blízko sebe a jdi ve směru růstu. Až zjistíš, že při dalším kroku hodnota neroste, dělej něco podobného jako v předchozím bodě

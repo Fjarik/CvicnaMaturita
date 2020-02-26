@@ -21,11 +21,11 @@ namespace Druhe
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private MainConnector connector;
+		private readonly MainConnector _connector;
 
 		public MainWindow()
 		{
-			connector = new MainConnector();
+			_connector = new MainConnector();
 			InitializeComponent();
 
 			var funcs = Enum.GetValues(typeof(FuncName)).Cast<FuncName>();
@@ -42,18 +42,20 @@ namespace Druhe
 		private async void GetVal_OnClick(object sender, RoutedEventArgs e)
 		{
 			if (!double.TryParse(TxtXvalue.Text, out double xVal)) {
+				MessageBox.Show("Neplatná hodnota X");
 				return;
 			}
-			if (!(CmBoxFuncNames.SelectionBoxItem is ComboBoxItem item)) {
+			if (!(CmBoxFuncNames.SelectedItem is ComboBoxItem item) || !(item.Tag is FuncName func)) {
+				MessageBox.Show("Neplatný výběr funkce");
 				return;
 			}
-			if (!(item.Tag is FuncName func)) {
-				return;
-			}
+			GridLoading.Visibility = Visibility.Visible;
 
-			var res = await connector.GetModel(func, xVal);
+			var res = await _connector.GetModel(func, xVal);
 
 			TxtYvalue.Text = res.yVal.ToString();
+
+			GridLoading.Visibility = Visibility.Hidden;
 		}
 	}
 }

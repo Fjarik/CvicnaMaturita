@@ -6,39 +6,51 @@
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         xmlns:local="clr-namespace:Treti"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Druhé cvičení" Height="450" Width="800">
 	<Grid>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="61*" />
-			<RowDefinition Height="50" />
-			<RowDefinition Height="308*" />
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="5*" />
-			<ColumnDefinition Width="17*" />
-		</Grid.ColumnDefinitions>
-		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Width="120" />
-		<TextBox x:Name="TxtCount" Text="300"
-		         HorizontalAlignment="Center" Height="26" Margin="0,35,0,0" VerticalAlignment="Top"
-		         Width="120" Grid.Row="2" Grid.Column="0" />
+		<Grid x:Name="GridLoading" Background="White" ZIndex="1" Visibility="Hidden">
+			<TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Načítání dat" />
+			<Button VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,50,0,0" Content="Zrušit"
+			        Click="ButtonCancel_OnClick" />
+		</Grid>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="60" />
+				<RowDefinition Height="60" />
+				<RowDefinition Height="60" />
+				<RowDefinition Height="30" />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="180" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Center" Margin="30,25,30,0" VerticalAlignment="Top"
+			          Width="120" Height="22" />
+			<TextBox x:Name="TxtCount" Text="300"
+			         HorizontalAlignment="Center" Height="26" Margin="30,23,30,0" VerticalAlignment="Top"
+			         Width="120" Grid.Row="2" Grid.Column="0" />
 
-		<Button HorizontalAlignment="Center" Margin="0,66,0,0" Content="Načíst data" VerticalAlignment="Top"
-		        Click="GetVal_OnClick" Grid.Row="2" Grid.Column="0" Width="76" />
-		<TextBox x:Name="TxtMin" Text="-300"
-		         HorizontalAlignment="Left" Height="26" Margin="3,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="64" Grid.Row="1" Grid.Column="0" />
-		<TextBox x:Name="TxtMax" Text="300"
-		         HorizontalAlignment="Right" Height="26" Margin="0,24,3,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         Width="64" Grid.Row="1" Grid.Column="0" />
+			<Button HorizontalAlignment="Center" Content="Načíst data"
+			        Click="GetVal_OnClick" Grid.Row="3" Grid.Column="0" Width="76" Height="20" VerticalAlignment="Center" />
+			<TextBox x:Name="TxtMin" Text="-300"
+			         HorizontalAlignment="Left" Height="26" Margin="3,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+			         Width="64" Grid.Row="1" Grid.Column="0" />
+			<TextBox x:Name="TxtMax" Text="300"
+			         HorizontalAlignment="Right" Height="26" Margin="0,24,3,0" TextWrapping="Wrap" VerticalAlignment="Top"
+			         Width="64" Grid.Row="1" Grid.Column="0" />
 
-		<lvc:CartesianChart x:Name="MainChart" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" />
-		<TextBlock HorizontalAlignment="Left" Margin="30,14,0,0" Grid.Row="2" Grid.Column="0" Text="Počet bodů:"
-		           VerticalAlignment="Top" />
-		<TextBlock HorizontalAlignment="Left" Margin="3,3,0,0" Grid.Row="1" Grid.Column="0" Text="Minimum:"
-		           VerticalAlignment="Top" />
-		<TextBlock HorizontalAlignment="Left" Margin="113,3,0,0" Grid.Row="1" Grid.Column="0" Text="Maximum:"
-		           VerticalAlignment="Top" />
-		<TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="30,4,110,0" Text="Funkce:"
-		           VerticalAlignment="Top" />
+			<lvc:CartesianChart x:Name="MainChart" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" />
+			<TextBlock HorizontalAlignment="Left" Margin="30,2,0,0" Grid.Row="2" Grid.Column="0" Text="Počet bodů:"
+			           VerticalAlignment="Top" Height="16" Width="63" />
+			<TextBlock HorizontalAlignment="Left" Margin="3,3,0,0" Grid.Row="1" Grid.Column="0" Text="Minimum:"
+			           VerticalAlignment="Top" Height="16" Width="53" />
+			<TextBlock HorizontalAlignment="Right" Margin="0,3,10,0" Grid.Row="1" Grid.Column="0" Text="Maximum:"
+			           VerticalAlignment="Top" Height="16" Width="55" />
+			<TextBlock Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="30,4,110,0" Text="Funkce:"
+			           VerticalAlignment="Top" Height="16" Width="40" />
+			<CheckBox x:Name="ChBoxAddSeries" Content="Přidáváat data do grafu" HorizontalAlignment="Left" Margin="10,10,0,0"
+			          Grid.Row="4" Grid.Column="0" VerticalAlignment="Top" />
+		</Grid>
 	</Grid>
 </Window>

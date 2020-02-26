@@ -28,7 +28,6 @@ namespace Ctvrte
 				if (Math.Abs(diff) < 2) {
 					Console.WriteLine($"Pro x = {i} má funce G nižší hodnotu než fce F, a to o {diff}");
 				}
-				await Task.Delay(10);
 			}
 			Console.WriteLine();
 			Console.WriteLine();
@@ -38,7 +37,6 @@ namespace Ctvrte
 				if (Math.Abs(g.yVal) < 0.001) {
 					Console.WriteLine($"Pro x = {i} má fce G hodnotu {g.yVal}");
 				}
-				await Task.Delay(15);
 			}
 
 			Console.ReadKey();

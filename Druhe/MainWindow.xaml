@@ -7,18 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
 	<Grid>
-
-		<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Stretch" Margin="10,30,10,0" VerticalAlignment="Top" />
-		<TextBox x:Name="TxtXvalue"
-		         HorizontalAlignment="Stretch" Margin="10,81,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         ToolTip="Zadejte hodnut X" />
-		<TextBox x:Name="TxtYvalue"
-		         HorizontalAlignment="Stretch" Margin="10,120,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
-		         IsReadOnly="True" />
-		<Button HorizontalAlignment="Center" Margin="0,150,0,0" Content="Zjistit číslo" VerticalAlignment="Top"
-		        Click="GetVal_OnClick" />
-		<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Funkce:" VerticalAlignment="Top" />
-		<TextBlock HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="X:" VerticalAlignment="Top" />
-		<TextBlock HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="Y:" VerticalAlignment="Top" />
+		<Grid x:Name="GridLoading" Background="White" ZIndex="1" Visibility="Hidden">
+			<TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Načítání dat" />
+		</Grid>
+		<Grid>
+			<ComboBox x:Name="CmBoxFuncNames" HorizontalAlignment="Stretch" Margin="10,30,10,0" VerticalAlignment="Top" />
+			<TextBox x:Name="TxtXvalue"
+			         HorizontalAlignment="Stretch" Margin="10,81,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
+			         ToolTip="Zadejte hodnut X" />
+			<TextBox x:Name="TxtYvalue"
+			         HorizontalAlignment="Stretch" Margin="10,120,10,0" TextWrapping="Wrap" VerticalAlignment="Top"
+			         IsReadOnly="True" />
+			<Button HorizontalAlignment="Center" Margin="0,150,0,0" Content="Zjistit číslo" VerticalAlignment="Top"
+			        Click="GetVal_OnClick" />
+			<TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Funkce:" VerticalAlignment="Top" />
+			<TextBlock HorizontalAlignment="Left" Margin="10,60,0,0" TextWrapping="Wrap" Text="X:" VerticalAlignment="Top" />
+			<TextBlock HorizontalAlignment="Left" Margin="10,104,0,0" TextWrapping="Wrap" Text="Y:" VerticalAlignment="Top" />
+		</Grid>
 	</Grid>
 </Window>
